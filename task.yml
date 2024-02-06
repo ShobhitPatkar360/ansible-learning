@@ -1,0 +1,15 @@
+--- # Playbook for running tasks
+- hosts: demo # task shows ki command kis per run karna hai
+  user: ansible # User tells ki as a which user command ko run karna hai
+  become: yes # Become tells ki root user privilege dena hai ki nhi
+  connection: ssh # Many  connections are there, kis connection ko prefer karna>
+  tasks: 
+          # Respective Ansible nodes par konse action perform karna hai
+          # Hum ansible server install karre hai
+
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: present
+    - name: Installing Tree Package
+      action: apt name=tree state=present

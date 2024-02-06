@@ -1,0 +1,4 @@
+- name: Installing apache on Ubuntu
+  apt:
+    pkg: apache2
+    state: latest

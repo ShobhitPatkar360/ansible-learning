@@ -1,0 +1,19 @@
+--- # Playbook to uninstall the apache software
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Remove Apache2 package
+      apt:
+        name: apache2
+        state: absent
+
+    - name: Remove tree package
+      apt:
+        name: tree
+        state: absent
+
+
+
+# I am little worried, ki ye run hoga ya nhi

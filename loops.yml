@@ -1,0 +1,21 @@
+--- #This playbook is for demosntration of loop concept
+
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Adding list of users to node
+      # user module generally adds user to the respective machine
+      user:
+        # user module itself have 2 attributes i.e. name and state
+        name: '{{item}}'
+        state: present
+
+      # it feels like 2 things are fix, itme variable and with_items attribure
+      with_items:
+        - Shobhit
+        - Vasco-dega
+        - Bupendra
+        - Avanti
+        - sachin_tendulkar

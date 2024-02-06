@@ -1,0 +1,22 @@
+# CHECKING THE CONCEPT OF ROLES
+- hosts: demo # deciding ki perticular playbook kin kin machines ke liye execute ho rahi hai
+  user: ansible # as a which user login karna hai
+  become: yes # wants sudo privlege or not
+  connection: ssh # kis connection ko prefer karna hai
+
+  # yaha par task section nhi hai, humar jo directory hai, uska name hai
+  roles: # roles humari directory ka name hai
+
+
+
+    - webserver # ye humari sub-directory hai
+    - folder
+    - file
+
+  # yaha par roles ke andar hi sab aayega
+  # hum roles directory ke andar apni desire ke according directory create kar sakte hai
+  # bas playbook me jonse attribute ka code chahiye, uss attribute ke name ka folder humari desiered directory me humko create karna hoga
+  # for example humari playbook me task attribte ka code roles/something me chahiye  hai
+  # hum playbook me likhente roles: something
+  # yaha par something ke andar tasks name ka folder hoga, jisme main.yml file hogi
+

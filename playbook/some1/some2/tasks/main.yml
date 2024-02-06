@@ -1,0 +1,8 @@
+    - name: Creating a text file
+      ansible.builtin.copy:
+        dest: temp/sp.txt
+        content: |
+          this is shobhit
+          shobhit is dump
+          shobhit ka weight 38kg hai
+

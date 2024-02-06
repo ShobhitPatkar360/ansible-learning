@@ -1,0 +1,16 @@
+--- # This playbook for demonstrating variabl concept
+
+- hosts: demo  #  This task is for whom
+  user: ansible  # As a which user login karna 
+  become: yes  #  Providing root user privilege
+  connection: ssh  #  kis type ka connection karna hai
+  vars:   #  This section is for creating variable
+    pkgname: apache2
+  tasks:   # This section is for creating the task
+      # Here installing the web server
+    - name: Installing the HTTP server
+      
+      # Here we are putting value in action field
+      apt: 
+          name: '{{pkgname}}'
+          state: present

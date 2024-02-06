@@ -1,0 +1,14 @@
+--- # SIMPLE PLAYBOOOK FOR CREATING A TEXT FIEL
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Creating a text file
+      ansible.builtin.copy:
+        dest: temp/sp.txt
+        content: |
+          this is shobhit
+          shobhit is dump
+          shobhit ka weight 38kg hai
+        

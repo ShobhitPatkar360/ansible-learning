@@ -1,0 +1,4 @@
+- name: Deleteing tree package
+  apt:
+    pkg: tree
+    state: latest

@@ -1,0 +1,11 @@
+# My First Testing YAML Playbook
+- hosts: demo # host decide karta hai ki ye commands baiscally kis par chalegi
+  user: ansible # As a kis user, tumko machine access karna hai
+  become: yes  # become ko yes karne se hum root user ban jate hai
+  connection: ssh  # Node ko access karne ke bahut saare connections hote hai abhi meko jada nhi pata
+  gather_facts: yes  # Hum instance ko access karne ke baad usko about kuch information gahterh karte hai
+
+# List ka first element ke aage dash "-" aata hai
+# colon ke baad space aata hai
+
+

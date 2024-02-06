@@ -1,0 +1,8 @@
+    - name: Creating a text file
+      ansible.builtin.copy:
+        dest: temp/sp2.txt
+        content: |
+          some content lines
+          line2
+          line3
+

@@ -1,0 +1,22 @@
+--- # CONDITIONAL PLAYBOOK
+- hosts: demo # hume kis kis machines par work karni hai
+  user: ansible # as a which user login karna hai
+  become: yes # hume sudo privileges chahiye ya nhi
+  connection: ssh # kis type ka connection hai
+
+  tasks:
+
+    - name: Installing apache serer for debian family
+      command: apt install apache2 -y # command will run directly when condition will become trues
+      when: ansible_os_family == "Debian"
+
+
+    - name: Installing apache server for redhat
+      command: yum insall httpd
+      when: ansible_os_family == "RedHat"
+
+
+# jin situations me condition true ho jati hai, vaha par command run ho jati hai
+# jin situations me condition false ho jati hai , vaha par command skip ho jati hai , without giving error
+
+
