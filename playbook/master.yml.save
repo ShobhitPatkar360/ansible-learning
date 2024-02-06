@@ -1,0 +1,14 @@
+# CHECKING THE CONCEPT OF ROLES
+- hosts: demo # deciding ki perticular playbook kin kin machines ke liye execute ho rahi hai
+  user: ansible # as a which user login karna hai
+  become: yes # wants sudo privlege or not
+  connection: ssh # kis connection ko prefer karna hai
+
+  # yaha par task section nhi hai, humar jo directory hai, uska name hai
+  roles: # roles humari directory ka name hai
+    - webserver # ye humari sub-directory hai
+
+      # webserver ke andar jitte bhi code present hai, vo sab append ho jayega
+
+
+# roles ke concept ke through hum kisi task ko directly na likh ke indirectly likh sakte hai, isse ek structural view mil jata hai

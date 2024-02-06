@@ -129,3 +129,46 @@ ansible-vault create vault.yml
 nano conditions.yml 
 andible-vault edit vault.yml
 ansible-vault edit vault.yml
+ls
+ansible-vault rekey vault.yml
+ansible-vault vault.yml
+ansible-vault edit vault.yml
+ls
+cat handlers.yml 
+ansible-vault encrypt handlers.yml 
+cat handlers.yml 
+ansible-vault edit handlers.yml
+ansible-vault decrypt handlers.yml
+cat handlers.yml 
+sudo apt install tree -y
+tree
+mkdir -p playbook/roles/webserver/tesks
+ls
+tree
+cd playbook/
+tree
+touch roles/webserver/task/main.yml
+touch roles/webserver/tasks/main.yml
+rm -rf /roles/webserver/tesks
+tree
+rm -rf /roles/webserver
+tree
+rm -rf /roles/webserver *
+tree
+mkdir -p /roles/webserver/tasks
+mkdir -p roles/webserver/tasks
+tree
+touch roles/webserver/tasks/main.yml
+tree
+touch master.yml
+ls
+nano roles/webserver/tasks/main.yml
+cat roles/webserver/tasks/main.yml
+ls
+cd ..
+ls
+cat remove.yml
+ansible-playbook remove.yml --become-password-file=sudo_password.txt
+cd playbook/
+cat master.yml 
+nano master.yml 
