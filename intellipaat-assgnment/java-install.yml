@@ -1,0 +1,49 @@
+---
+- name: Playbook to set up java environment
+  hosts: slave2
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Update repos
+      apt: 
+        name: "*"
+        state: latest
+  
+    - name: Install OpenJDK
+      apt:
+        name: openjdk-11-jdk 
+        update-cache: yes 
+        state: latest
+
+    - name: adding environment variable for java
+      blockinfile:
+        dest: /etc/environment
+        block: | 
+          JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+          export JAVA_HOME
+
+
+
+    - name: Download Tomcat
+      get_url:
+        url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.tar.gz
+        dest: /tmp/
+        validate_certs: no
+
+    - name: Create Apache Tomcat Home Directory 
+      shell: mkdir -p /opt/tomcat
+
+    - name: Extract Tomcat
+      shell: tar -xzvf /tmp/apache-tomcat-*tar.gz -C /opt/tomcat --strip-components=1
+
+    - name: Start Tomcat
+      shell: /opt/tomcat/bin/startup.sh
+      ignore_errors: true
+
+    - name: Waiting for tomcat to start
+      wait_for: 
+        host: 3.138.106.24
+        port: 8080
+        state: started
+
